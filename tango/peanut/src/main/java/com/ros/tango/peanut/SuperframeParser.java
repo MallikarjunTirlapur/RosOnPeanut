@@ -144,9 +144,7 @@ public class SuperframeParser extends SurfaceView implements Callback,
     ImageView vw;
     short x, y;
 
-    /**
-     * Create surface and an array to hold color pixels.
-     */
+   
     private void init() {
         setWillNotDraw(false); // Enable view to draw.
         mSurfaceHolder = getHolder();
@@ -319,8 +317,8 @@ public class SuperframeParser extends SurfaceView implements Callback,
         mLeftBottomIcon = mLeftBot;
         mRightTopIcon = mRightT;
         mRightBottomIcon = mRightBot;
-
         mDv.setOnTouchListener(this);
+        
         initializeBoundingBoxParameters();
     }
 
@@ -379,12 +377,7 @@ public class SuperframeParser extends SurfaceView implements Callback,
 
     }
 
-
-    /**
-     * Draw false color overlay on top of camera's image during preview. The
-     * data[] parameter is a Superframe, it contains the depth buffer.
-     */
-
+    //parse superframe for depth and rgb images
     @Override
     public void onPreviewFrame(final byte[] data, Camera cameraPreFrame) {
         try {
@@ -395,10 +388,7 @@ public class SuperframeParser extends SurfaceView implements Callback,
         }
         long sysTime = System.currentTimeMillis();
         long curTime = sysTime;
-
-//         System.out.println(sysTime +" "+prevTime);
         long timeTaken = curTime - prevTime;
-        //        System.out.println(timeTaken);
         prevTime = curTime;
 
         if (depthPubTime > 1000) {
@@ -406,10 +396,6 @@ public class SuperframeParser extends SurfaceView implements Callback,
         }
         depthPubTime += timeTaken;
 
-
-        //depth
-        //     long sysTime = System.currentTimeMillis();
-        //     if(depthPubTime >= 200) {
         int depthBufferByteIndex = Superframe.SF_START_INDEX_DEPTH;
         for (int bitmapIndex = 0; bitmapIndex < Superframe.DB_SIZE; ++bitmapIndex) {
             int pixDepthMm = ((((int) data[depthBufferByteIndex + 1]) << 8) & 0xff00)
@@ -422,14 +408,10 @@ public class SuperframeParser extends SurfaceView implements Callback,
 
         }
         rawImageListener.onNewDepthImage(rawDepthData, Superframe.DB_WIDTH, Superframe.DB_HEIGHT, currentTime);
-
         depthPubTime = 0;
-        //    }
 
-        //rgbgrey_scale
         int rgbBigArrayIndex = Superframe.SF_START_INDEX_BIGIMAGEY;
         byte b;
-
 
         for (int j = 0; rgbBigArrayIndex < (1280 * 1752); j++) {
             b = data[rgbBigArrayIndex++];
@@ -441,7 +423,6 @@ public class SuperframeParser extends SurfaceView implements Callback,
         }
         rawRgbListener.onNewRawImage(rawRgbData, Superframe.RGB_WIDTH, Superframe.RGB_HEIGHT, currentTime);
 
-        //     if(skip_frame) {
         try {
             Thread.sleep(200);
 
