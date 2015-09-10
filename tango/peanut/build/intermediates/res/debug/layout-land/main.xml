@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    tools:context=".Draw">
+
+    <com.ros.tango.peanut.RosSurface
+        android:id="@+id/depthview"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="pos_x"
+        android:id="@+id/pos_x" />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="pos_y"
+        android:id="@+id/pos_y"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/pos_x"
+        android:layout_toEndOf="@+id/pos_x" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="place"
+        android:textSize="20sp"
+        android:id="@+id/but_place"
+        android:onClick="commandRobot"
+        android:background="@drawable/button"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/pos_y"
+        android:layout_toEndOf="@+id/pos_y"
+        android:layout_marginLeft="118dp" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="pick"
+        android:textSize="20sp"
+        android:id="@+id/but_pick"
+        android:onClick="teachRobot"
+        android:background="@drawable/button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="56dp" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="place"
+        android:textSize="20sp"
+        android:id="@+id/button"
+        android:onClick="teachRobot"
+        android:background="@drawable/button"
+        android:layout_toStartOf="@+id/but_pick"
+        android:layout_toLeftOf="@+id/but_pick"
+        android:layout_alignLeft="@+id/but_pick"
+        android:layout_alignStart="@+id/but_pick" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="play"
+        android:textSize="20sp"
+        android:id="@+id/play"
+        android:onClick="playRobot"
+        android:layout_below="@+id/but_place"
+        android:layout_alignRight="@+id/but_pick"
+        android:background="@drawable/button"
+        android:layout_alignEnd="@+id/but_pick"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button" />
+
+
+</RelativeLayout>
+
+<!-- From: file:/home/mallik/ROS_ws/kuka/src/tango/peanut/src/main/res/layout-land/main.xml -->

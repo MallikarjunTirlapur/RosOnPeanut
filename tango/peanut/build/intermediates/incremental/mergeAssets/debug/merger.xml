@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/home/mallik/ROS_ws/kuka/src/tango/peanut/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/mallik/ROS_ws/kuka/src/tango/peanut/src/debug/assets" />
+    </dataSet>
+
+</merger>
