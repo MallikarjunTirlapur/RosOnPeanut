@@ -9,21 +9,21 @@ Android Studio 0.8.6
 Minimum SDK version 18
 
 For more information on project tango see,
-[https://www.google.com/atap/projecttango/?ref=producthunt#project)
+[https://www.google.com/atap/projecttango/?ref=producthunt#project]
 
 ### The instructions,
-* **Create a ROS catkin workspace. Please follow the instruction [http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
-* **pull the repository into your workspace
+* Create a ROS catkin workspace. Please follow the instruction [http://wiki.ros.org/catkin/Tutorials/create_a_workspace]
+* pull the repository into your workspace
 ```
 > cd ~/RosOnPeanut/src
 > git clone https://github.com/MallikarjunTirlapur/RosOnPeanut.git
 ````
-* **pull the repository into your workspace
+* pull the repository into your workspace
 ```
 > cd ~/RosOnPeanut
 > catkin_make
 ```
-* **Open the project in android studio, build the project and install the application in project tango smartphone. 
+* Open the project in android studio, build the project and install the application in project tango smartphone. 
 
 
 Please let me know, if you face any problems.
