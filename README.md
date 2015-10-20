@@ -6,7 +6,7 @@ A bounding box is also created to select objects in the camera preview and to co
 
 Requirements,
 * Android Studio 0.8.6
-* Minimum SDK version 18
+* android:minSdkVersion 18
 
 For more information on project tango see,
 [https://www.google.com/atap/projecttango/?ref=producthunt#project]
