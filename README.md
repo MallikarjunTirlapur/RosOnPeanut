@@ -24,6 +24,8 @@ For more information on project tango see,
 > catkin_make
 ```
 * **Open the project in android studio, build the project and install the application in project tango smartphone. 
-Please let me know, if you face any problem.
+
+
+Please let me know, if you face any problems.
 
 
