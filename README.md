@@ -2,11 +2,11 @@
 
 The android application built for project tango smartphone on ROS platform utilizing rosjava apis. 
 The application parses the superframe for RGB and Depth images.These images are compressed and published in the ROS network.
-A bounding box is also created to select objects in the camera preview and to compute the 2D pixel coordinate.
+A bounding box is also created to select objects in the camera preview and to compute the 2D pixel coordinate of the object in the image.
 
 Requirements,
-Android Studio 0.8.6
-Minimum SDK version 18
+* Android Studio 0.8.6
+* Minimum SDK version 18
 
 For more information on project tango see,
 [https://www.google.com/atap/projecttango/?ref=producthunt#project]
