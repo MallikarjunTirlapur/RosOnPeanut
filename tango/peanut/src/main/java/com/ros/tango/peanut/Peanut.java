@@ -38,20 +38,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-/**
- * DepthScanActivity is the launch activity of the PeanutDepthScan app.
- * PeanutDepthScan is a real-time camera app that scans objects by drawing a
- * 'Depth Line' over the top of them. The 'Depth Line' is based on the actual
- * depth of a pixel, this depth data comes from the Peanut's depth buffer. Upon
- * launch, the app starts a camera object and sets a surface for it to draw on.
- * The app then reads the depth buffer during the camera preview. It then draws
- * a 'false color' overlay on top the camera image, the color is based on the
- * depth buffer.
- * Note: The depth buffer is a 2 dimensional array of ints that corresponds to
- * the images the camera captures.
- *
- * @author Michael F. Winter (robotmikew@gmail.com)
- */
+
 
 public class Peanut extends RosActivity{
     RosSurface mDepthView = null;  //Surface for drawing on.
